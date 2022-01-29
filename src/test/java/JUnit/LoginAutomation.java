@@ -16,19 +16,12 @@ class LoginAutomation {
 
 	@Test
 	void test() {
-		//setting the driver executable
 		System.setProperty("webdriver.chrome.driver", "C:\\Projects\\Selenium_Project\\chromedriver.exe");
 
-		//Initiating your chromedriver
 		WebDriver driver=new ChromeDriver();
 
-		//Applied wait time
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		//maximize window
 		driver.manage().window().maximize();
 
-		//open browser with desried URL
-		//driver.get("http://ict.ihu.gr/");
 		driver.get("https://www.browserstack.com/users/sign_in");
 		
 		WebElement username = driver.findElement(By.id("user_email_login"));
@@ -44,7 +37,6 @@ class LoginAutomation {
 		String actualUrl = driver.getCurrentUrl();
 		String expectedUrl = driver.getCurrentUrl();
 		Assertions.assertEquals(expectedUrl,actualUrl);
-		//closing the browser
 		//driver.quit();
 
 	}
